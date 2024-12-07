@@ -8,26 +8,28 @@ export function Modal({ modal, text, updateTextDo }) {
   console.log(inputText);
 
   const modalClose = () => {
-    updateTextDo(inputText);
+    !inputText ? alert("Вы ничего не ввели!") : updateTextDo(inputText);
   };
 
   return (
     <div className={modal ? style.show : style.modal}>
-      <div className={style.modal_window}>
+      <form
+        className={style.modal_window}
+        onSubmit={e => {
+          e.preventDefault();
+          modalClose();
+        }}
+      >
         {" "}
         Отредактируйте Ваше дело{" "}
         <input
           value={inputText}
-          onChange={e =>
-            e.target.value
-              ? setInputText(e.target.value)
-              : alert("Вы ничего не ввели!")
-          }
+          onChange={e => setInputText(e.target.value)}
         />{" "}
         <div className={style.btn_close}>
           <ImCross onClick={modalClose} />{" "}
         </div>{" "}
-      </div>{" "}
+      </form>{" "}
       <div className={style.modal_overlay}> </div>{" "}
     </div>
   );

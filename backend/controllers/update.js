@@ -3,7 +3,7 @@ import { connection } from "../connectDB.js";
 export const update = async (req, res) => {
   const data = req.body;
   console.log(data);
-  const todo = [data.todo, data.id];
+  const todo = [data.text, data.id];
   const sql = "update todolist set todo = ? where id = ?";
   connection.query(sql, todo, function (err, results) {
     if (err) {

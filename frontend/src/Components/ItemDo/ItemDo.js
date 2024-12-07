@@ -2,8 +2,6 @@ import style from "./ItemDo.module.css";
 import { ImCog, ImCheckmark2, ImCross } from "react-icons/im";
 
 export const ItemDo = ({ openModal, item, updateStatusDo, deleteDo }) => {
-  console.log(item.todo);
-
   return (
     <div className={style.item}>
       <div className={style.item__text}>
