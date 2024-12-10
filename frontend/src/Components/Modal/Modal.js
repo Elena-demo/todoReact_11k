@@ -30,7 +30,9 @@ export function Modal({ modal, text, updateTextDo }) {
           <ImCross onClick={modalClose} />{" "}
         </div>{" "}
       </form>{" "}
-      <div className={style.modal_overlay}> </div>{" "}
+      <div className={style.modal_overlay} onClick={modalClose}>
+        {" "}
+      </div>{" "}
     </div>
   );
 }

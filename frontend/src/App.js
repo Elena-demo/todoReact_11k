@@ -58,9 +58,9 @@ function App() {
       getTodosServer();
     }, 300);
   }
-  let updateStatusDo = id => {
+  let updateStatusDo = (id, status) => {
     console.log(id);
-    patchStatus({ id });
+    patchStatus({ id, status });
     setTimeout(() => {
       getTodosServer();
     }, 300);

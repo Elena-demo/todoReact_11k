@@ -15,6 +15,11 @@
   padding-right: 30px;
 }
 
+.item__text__done {
+  background-color: rgb(26, 132, 245);
+  text-decoration: line-through;
+}
+
 .p {
   padding: 1px;
 }
